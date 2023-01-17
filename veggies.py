@@ -1,3 +1,7 @@
+
+import csv
+# 1 Write a python script called veggies.py that defines a list of dicts named vegetables like so:
+
 vegetables = [
  {"name": "eggplant", "color": "purple"},
  {"name": "tomato", "color": "red"},
@@ -7,25 +11,27 @@ vegetables = [
  {"name": "broccoli", "color": "green"},
 ]
 
-# this is the less intellignet way to do the task lol
-# o = open('output/veggies.csv', 'w')
-# o.write('name, color, name length \n')
-#
-# for veggie in vegetables:
-#     o.write(veggie["name"])
-#     o.write(', ')
-#     o.write(veggie["color"])
-#     o.write(', ')
-#     o.write(str(len(veggie["name"])))
-#     o.write('\n')
 
-import csv
 
-o = open('output/veggies2.csv', 'w')
-writer = csv.writer(o)
-writer.writerow(["name", "color", "length"])
+# 2 In the loop, write the name of each vegetable and the color into a CSV called vegetables.csv
+with open('vegetables.csv', 'w') as g:
+    writer = csv.writer(g)
 
-for veggie in vegetables:
-    writer.writerow([veggie["name"], veggie["color"], str(len(veggie["name"]))])
+    writer.writerow(["name", "color"])
 
-o.close()
+    for veggie in vegetables:
+        print(writer.writerow([veggie["name"], veggie["color"]]))
+    
+
+
+#3 Bonus
+
+with open('vegetables1.csv', 'w') as o:
+    writer = csv.writer(o)
+    writer.writerow(["name", "color", "length"])
+
+    for veggie in vegetables:
+        writer.writerow([veggie["name"], veggie["color"], str(len(veggie["name"]))])
+
+
+
