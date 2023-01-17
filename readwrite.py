@@ -5,5 +5,5 @@ with open('name.txt') as f:
 
 # writes a new file named output/hello.txt with the contents Hello, my name is <my_name>.
 with open('output/hello.txt', 'w') as o:
-    o.write('hello, my name is ')
+    o.write('hello, my name is Gashaw Ayele')
     o.write(my_name)
